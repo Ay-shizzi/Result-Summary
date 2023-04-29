@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @font-face {
+    font-family: HankenGrotesk;
+    src: url(../results-summary-component-main/assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: hankengrotesk;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.content{
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+    border-radius: 20px;
+    box-shadow: 7px 10px 10px 1px #0000001a;
+}
+.left{
+    background: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%)) ;
+    border-radius: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+.left h1{
+    font-size: 16px;
+    padding: 30px 0;
+    font-weight: 400;
+}
+.circle{
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+}
+.circle span{
+    font-size: 45px;
+    font-weight: bolder;
+    color: hsl(0, 0%, 100%);
+}
+.circle p{
+    font-size: 10px;
+    font-weight: 200;
+}
+.info{
+    width: 70%;
+    margin: 20px auto;
+}
+.info h3{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: hsl(0, 0%, 100%);
+}
+.info p{
+    font-size: 12px;
+    font-weight: 200;
+}
+.right{
+    background-color: rgba(255, 255, 255, 0.1);
+    color: hsl(0, 0%, 0%);
+    padding: 20px;
+}
+.right h3{
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 0 15px;
+}
+.right p{
+    color: hsl(0, 1%, 79%);
+}
+.right .score{
+    color: hsl(0, 0%, 0%);
+}
+.summary{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 7px;
+    border-radius: 8px;
+}
+.summary-title{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.summary img{
+    height: 12px;
+}
+.reaction{
+    background-color: hsla(0, 100%, 67%, 0.05);
+    color: hsl(0, 100%, 67%);
+}
+.memory{
+    background-color: hsla(39, 100%, 56%, 0.05);
+    color: hsl(39, 100%, 56%);
+}
+.verbal{
+    background-color: hsla(166, 100%, 37%, 0.05);
+    color: hsl(166, 100%, 37%);
+}
+.visual{
+    background-color: hsla(234, 85%, 45%, 0.05);
+    color: hsl(234, 85%, 45%);
+} 
+button{
+    width: 100%;
+    padding: 8px 0;
+    margin-top: 10px;
+    border: 0;
+    outline: 0;
+    border-radius: 20px;
+    background: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%)) ;
+    color: hsl(0, 0%, 100%);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px){
+    .content{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+    }
+    .left{
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+    .info{
+        width: 70%;
+    }
+}
+
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="content">
+      <div class="left">
+        <h1>Your Result </h1>
+        <div class="circle">
+          <span>76</span>
+          <p>of 100</p>
+        </div>
+        <div class="info">
+          <h3>Great</h3>
+          <p>You scored higher than 65% of the people who have taken these tests.</p>
+        </div>
+      </div>
+
+      <div class="right">
+        <h3>Summary</h3>
+       <div class="reaction summary">
+        <div class="summary-title">
+          <img src="../results-summary-component-main/assets/images/icon-reaction.svg" alt="">
+        <span>Reaction</span>
+        </div>
+        <p><span class="score">80</span> / 100</p>
+       </div>
+
+       <div class="memory summary">
+        <div class="summary-title">
+          <img src="../results-summary-component-main/assets/images/icon-memory.svg" alt="">
+        <span>Memory</span>
+        </div>
+        <p><span class="score">92</span> / 100</p>
+       </div>
+
+       <div class="verbal summary">
+        <div class="summary-title">
+          <img src="../results-summary-component-main/assets/images/icon-verbal.svg" alt="">
+        <span>Verbal</span>
+        </div>
+        <p><span class="score">61</span> / 100</p>
+       </div>
+
+       <div class="visual summary">
+        <div class="summary-title">
+          <img src="../results-summary-component-main/assets/images/icon-visual.svg" alt="">
+        <span>Visual</span>
+        </div>
+        <p><span class="score">72</span> / 100</p>
+       </div>
+  
+       <button>Continue</button>
+       
+      </div>
+    </div>
+</div>
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Lawal Abdullahi (Ay-shizzi)</a>.
+  </div>
+  
+</body>
+</html>
